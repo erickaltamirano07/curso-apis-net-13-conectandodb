@@ -28,8 +28,9 @@ public class CategoriaService : ICategoriaService
         if(categoriaActual != null)
         {
             categoriaActual.Nombre = categoria.Nombre;
-            categoria.Descripcion = categoria.Descripcion;
-            categoria.Peso = categoria.Peso;
+            categoriaActual.Descripcion = categoria.Descripcion;
+            categoriaActual.Peso = categoria.Peso;
+            context.Update(categoriaActual);
 
             await context.SaveChangesAsync();
         }

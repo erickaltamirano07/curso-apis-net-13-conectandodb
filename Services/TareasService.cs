@@ -29,9 +29,10 @@ public class TareasService : ITareasService
         if(TareaActual != null)
         {
             TareaActual.Titulo = Tarea.Titulo;
-            Tarea.Descripcion = Tarea.Descripcion;
-            Tarea.PrioridadTarea = Tarea.PrioridadTarea;
-            Tarea.CategoriaId = Tarea.CategoriaId;
+            TareaActual.Descripcion = Tarea.Descripcion;
+            TareaActual.PrioridadTarea = Tarea.PrioridadTarea;
+            TareaActual.CategoriaId = Tarea.CategoriaId;
+            context.Update(TareaActual);
             
             await context.SaveChangesAsync();
         }
